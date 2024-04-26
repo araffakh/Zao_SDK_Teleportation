@@ -51,5 +51,5 @@ def read_from_serial(port):
             print("Serial port closed.")
 
 if __name__ == "__main__":
-    COM_PORT = 'COM12'  # Set this to the correct COM port
+    COM_PORT = 'COM3'  # Set this to the correct COM port
     read_from_serial(COM_PORT)

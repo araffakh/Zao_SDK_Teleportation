@@ -74,8 +74,12 @@ while True:
         print("Acc: {:.2f} | Brake: {:.2f} | Steer: {:.2f}".format(acc, brake, steer))
 
         # Format and send data over serial
-        message = "{},{},{}\n".format(int(acc * 255), int(brake * 255), int(steer * 255 * 256))
+        #message = "{},{},{}\n".format(int(acc * 255), int(brake * 255), int(steer * 255 * 256))
+        # ser.write(message.encode('utf-8'))
+        message = "{},{},{}|".format(int(acc * 255), int(brake * 255), int(steer * 255 * 256))
         ser.write(message.encode('utf-8'))
+
+
 
     except usb.core.USBError as e:
         if e.args == ('Operation timed out',):
